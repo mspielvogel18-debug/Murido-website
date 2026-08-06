@@ -1,0 +1,30 @@
+/* Murido — same palette and type pairing as the app. */
+:root{
+  --bg:#F2EAE0; --surface:#FBF8F4; --border:#E4DAD0;
+  --text:#1F2B3A; --muted:#6B6259; --faint:#9A9088;
+  --accent:#3D4E8C; --sage:#8A9A85;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+h1,h2,h3{font-family:Lora,Georgia,serif;letter-spacing:-.01em;line-height:1.25}
+h1{font-size:2.6rem;margin:0 0 .4em}
+h2{font-size:1.4rem;margin:2.2em 0 .5em}
+p,li{color:var(--muted)}
+a{color:var(--accent)}
+.brand{font-family:Lora,Georgia,serif;font-weight:700;font-size:1.5rem;letter-spacing:.06em;color:var(--text);text-decoration:none}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:64px;flex-wrap:wrap;gap:12px}
+nav .links a{margin-left:22px;font-size:.94rem;color:var(--muted);text-decoration:none}
+nav .links a:hover{color:var(--text)}
+.lede{font-size:1.18rem;color:var(--muted);margin-bottom:2.4em}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px 24px;margin:16px 0}
+.card h3{margin:0 0 .3em;font-size:1.1rem;color:var(--text)}
+.card p{margin:0;font-size:.97rem}
+.note{border-left:3px solid var(--sage);padding:2px 0 2px 18px;margin:2.4em 0;color:var(--muted)}
+footer{margin-top:72px;padding-top:26px;border-top:1px solid var(--border);font-size:.88rem;color:var(--faint)}
+footer a{color:var(--faint)}
+.updated{font-size:.86rem;color:var(--faint);margin-bottom:2.4em}
