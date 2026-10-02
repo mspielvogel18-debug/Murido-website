@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+<title>You've been invited — Murido</title>
+<meta name="description" content="Someone has invited you to help write a memory book in Murido.">
+<style>
+  .code{font-family:Lora,Georgia,serif;font-size:2.4rem;letter-spacing:.32em;text-align:center;
+        background:var(--panel,#F2EAE0);border:1px solid #E4DAD0;border-radius:14px;
+        padding:1.1rem .6rem 1.1rem 1rem;margin:.4rem 0 .6rem}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;
+       border-radius:12px;padding:.95rem 1rem;margin:.5rem 0}
+  .btn-dark{background:#1F2B3A;color:#FBF8F4}
+  .btn-quiet{background:transparent;color:#1F2B3A;border:1px solid #E4DAD0}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:1.2rem 0 0}
+  .steps li{counter-increment:s;position:relative;padding-left:2.1rem;margin:.65rem 0;color:#6B6259}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-.1rem;width:1.5rem;height:1.5rem;
+    border-radius:50%;background:#E4DAD0;color:#1F2B3A;font-size:.85rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center}
+  .copied{text-align:center;color:#8A9A85;font-size:.9rem;min-height:1.2rem;margin:0}
+</style>
+</head><body><div class="wrap">
+<nav><a class="brand" href="./">murido</a><div class="links"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div></nav>
+
+<h1>You’ve been invited.</h1>
+<p class="lede">Someone wants your help remembering a person they loved — the stories only you have, the ordinary days nobody else saw. You write your part, they write theirs, and it becomes one book.</p>
+
+<div class="card">
+  <p style="margin:0 0 .2rem;color:#6B6259">Your invite code</p>
+  <div class="code" id="code">······</div>
+  <p class="copied" id="copied">&nbsp;</p>
+  <a class="btn btn-dark" id="open" href="#">Open in Murido</a>
+  <a class="btn btn-quiet" id="store" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a>
+</div>
+
+<div class="card">
+  <h3>If you don’t have the app yet</h3>
+  <ol class="steps">
+    <li>Tap <strong>Download for iPhone</strong> and install Murido.</li>
+    <li>Open it and choose <strong>“I was invited to someone’s book.”</strong></li>
+    <li>Enter the code above. You’ll be added to their book.</li>
+  </ol>
+</div>
+
+<div class="note">What you write is visible to the people in that book and nobody else. Photos and voice notes stay on your own phone.</div>
+<footer>Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service. If you are in crisis, call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741.<br><br>&copy; 2026 Bubu Technologies LLC · <a href="mailto:support@murido.app">support@murido.app</a></footer>
+</div>
+<script>
+(function () {
+  // Accept ?c=CODE, and also tolerate /join.html?CODE and a #CODE fragment,
+  // because invite links get retyped and forwarded by hand.
+  var q = new URLSearchParams(location.search);
+  var raw = q.get('c') || q.get('code') || location.hash.replace('#', '') ||
+            (location.search.startsWith('?') && !location.search.includes('=')
+              ? location.search.slice(1) : '');
+  var code = (raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+
+  var el = document.getElementById('code');
+  var open = document.getElementById('open');
+
+  if (!code) {
+    el.textContent = '—';
+    el.style.letterSpacing = '0';
+    el.style.fontSize = '1.2rem';
+    document.getElementById('copied').textContent =
+      'This link is missing its code. Ask for the link again.';
+    open.style.display = 'none';
+    return;
+  }
+
+  el.textContent = code;
+  open.href = 'murido://join/' + code;
+
+  // Copying is the whole point of this page for anyone installing the app:
+  // they have to carry the code across the App Store by hand.
+  el.style.cursor = 'pointer';
+  el.title = 'Tap to copy';
+  function copy() {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(code).then(function () {
+      var c = document.getElementById('copied');
+      c.textContent = 'Code copied';
+      setTimeout(function () { c.innerHTML = '&nbsp;'; }, 2000);
+    }).catch(function () {});
+  }
+  el.addEventListener('click', copy);
+
+  // If Murido is already installed the scheme opens it. If it is not, iOS does
+  // nothing at all -- no error, no navigation -- so this is only ever wired to
+  // a button the user chooses to press, never fired on load.
+  open.addEventListener('click', function (e) {
+    e.preventDefault();
+    copy();
+    window.location.href = 'murido://join/' + code;
+  });
+
+  if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    document.getElementById('store').textContent = 'Murido is on iPhone — open this link there';
+  }
+})();
+</script>
+</body></html>
