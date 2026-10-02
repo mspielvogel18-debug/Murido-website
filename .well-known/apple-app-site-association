@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "V29V78883D.com.murido.app",
+        "paths": [ "/join.html", "/join.html*", "/join/*" ]
+      }
+    ]
+  }
+}
