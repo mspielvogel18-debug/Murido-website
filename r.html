@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+<title>Murido — a gentle companion for grief</title>
+<meta name="description" content="A private place to carry grief, and to keep the memory of the person you lost.">
+<style>
+  .code{font-family:Lora,Georgia,serif;font-size:2.1rem;letter-spacing:.3em;text-align:center;
+        background:#F2EAE0;border:1px solid #E4DAD0;border-radius:14px;
+        padding:1rem .5rem 1rem .9rem;margin:.3rem 0 .5rem;cursor:pointer}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;
+       border-radius:12px;padding:.95rem 1rem;margin:.5rem 0}
+  .btn-dark{background:#1F2B3A;color:#FBF8F4}
+  .copied{text-align:center;color:#8A9A85;font-size:.9rem;min-height:1.2rem;margin:0}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:1rem 0 0}
+  .steps li{counter-increment:s;position:relative;padding-left:2.1rem;margin:.6rem 0;color:#6B6259}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-.1rem;width:1.5rem;height:1.5rem;
+    border-radius:50%;background:#E4DAD0;color:#1F2B3A;font-size:.85rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center}
+</style>
+</head><body><div class="wrap">
+<nav><a class="brand" href="./">murido</a><div class="links"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div></nav>
+
+<h1 id="head">A gentle companion for grief.</h1>
+<p class="lede">Grief has no timeline and no single right way. Murido is a quiet, private place to carry it — and to keep the stories of the person you lost before they fade.</p>
+
+<div class="card" id="codeCard">
+  <p style="margin:0 0 .2rem;color:#6B6259">Your code</p>
+  <div class="code" id="code">······</div>
+  <p class="copied" id="copied">&nbsp;</p>
+  <a class="btn btn-dark" id="store" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a>
+  <ol class="steps">
+    <li>Tap <strong>Download for iPhone</strong>.</li>
+    <li>Open Murido — your code is filled in for you.</li>
+    <li>If it isn’t, paste it when asked.</li>
+  </ol>
+</div>
+
+<div class="note">Murido offers emotional support and companionship. It does not provide therapy, diagnosis, or crisis services, and it is not a substitute for professional care.</div>
+<footer>Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service. If you are in crisis, call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741.<br><br>&copy; 2026 Bubu Technologies LLC · <a href="mailto:support@murido.app">support@murido.app</a></footer>
+</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var raw = q.get('r') || q.get('ref') || q.get('code') || '';
+  var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 24);
+
+  var card = document.getElementById('codeCard');
+  var store = document.getElementById('store');
+
+  if (!code) {
+    // No code: a plain landing page, not a broken referral one.
+    card.querySelector('.code').style.display = 'none';
+    card.querySelector('p').style.display = 'none';
+    card.querySelector('.steps').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('code').textContent = code;
+
+  // The copy IS the attribution. iOS hands a fresh install nothing about the
+  // link that brought it, so the clipboard is the only thing that crosses the
+  // App Store -- the app reads it back and fills the field in.
+  function copy() {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(code).then(function () {
+      var c = document.getElementById('copied');
+      c.textContent = 'Copied — it will fill in automatically';
+      setTimeout(function () { c.innerHTML = '&nbsp;'; }, 2500);
+    }).catch(function () {});
+  }
+  document.getElementById('code').addEventListener('click', copy);
+  store.addEventListener('click', copy);
+  copy();
+
+  // Apple's own campaign attribution, as an independent cross-check against
+  // whatever the in-app code reports.
+  store.href = 'https://apps.apple.com/app/id6798652505?pt=0&ct='
+             + encodeURIComponent(code.toLowerCase()) + '&mt=8';
+})();
+</script>
+</body></html>
