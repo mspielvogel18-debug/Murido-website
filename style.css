@@ -310,3 +310,15 @@ blockquote.pull p{margin:0}
 [data-theme=dark] .compare td.us{background:rgba(157,174,232,.08)}
 .theme-toggle{margin-left:4px}
 [data-theme=dark] .privacy-band h2{color:#F3ECE2}
+/* round 5: ink art */
+.post-card .thumb,.hero-img{background:transparent}
+.post-card .thumb img,.hero-img img,.ink-art img{mix-blend-mode:multiply}
+.ink-art img{display:block;width:100%;height:auto}
+.hero-art{max-width:520px;margin:36px auto 0}
+.wide-art{max-width:760px;margin:32px auto 0}
+.step-art{max-width:150px;margin:0 0 14px}
+.byline img.byline-mark{border-radius:50%;background:#fff;object-fit:contain;padding:2px;mix-blend-mode:multiply}
+[data-theme=dark] .post-card .thumb,[data-theme=dark] .hero-img,[data-theme=dark] .ink-art{background:#F3ECE2}
+[data-theme=dark] .post-card .thumb img,[data-theme=dark] .hero-img img,[data-theme=dark] .ink-art img,[data-theme=dark] .byline img.byline-mark{mix-blend-mode:multiply}
+[data-theme=dark] .ink-art{border-radius:20px;padding:12px}
+[data-theme=dark] .byline img.byline-mark{background:#F3ECE2}
