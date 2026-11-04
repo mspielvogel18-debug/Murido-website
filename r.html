@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-<title>Murido — a gentle companion for grief</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/icon.png">
+<title>Murido | A gentle companion for grief</title>
 <meta name="description" content="A private place to carry grief, and to keep the memory of the person you lost.">
 <style>
   .code{font-family:Lora,Georgia,serif;font-size:2.1rem;letter-spacing:.3em;text-align:center;
@@ -15,11 +15,11 @@
     border-radius:50%;background:#E4DAD0;color:#1F2B3A;font-size:.85rem;font-weight:700;
     display:flex;align-items:center;justify-content:center}
 </style>
-</head><body><div class="wrap">
-<nav><a class="brand" href="./">murido</a><div class="links"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div></nav>
+</head><body>
+<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="inner"><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="30" height="30">murido</a><button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main"><a href="index.html">Home</a><a href="about.html">About</a><a href="approach.html">Our Approach</a><a href="companions.html">Companions</a><a href="blog/">Blog</a><a class="btn" href="get.html">Get the app</a></nav></div></header><main id="main" class="page"><div class="wrap">
 
 <h1 id="head">A gentle companion for grief.</h1>
-<p class="lede">Grief has no timeline and no single right way. Murido is a quiet, private place to carry it — and to keep the stories of the person you lost before they fade.</p>
+<p class="lede">Grief has no timeline and no single right way. Murido is a quiet, private place to carry it, and to keep the stories of the person you lost before they fade.</p>
 
 <div class="card" id="codeCard">
   <p style="margin:0 0 .2rem;color:#6B6259">Your code</p>
@@ -28,13 +28,13 @@
   <a class="btn btn-dark" id="store" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a>
   <ol class="steps">
     <li>Tap <strong>Download for iPhone</strong>.</li>
-    <li>Open Murido — your code is filled in for you.</li>
+    <li>Open Murido. Your code is filled in for you.</li>
     <li>If it isn’t, paste it when asked.</li>
   </ol>
 </div>
 
 <div class="note">Murido offers emotional support and companionship. It does not provide therapy, diagnosis, or crisis services, and it is not a substitute for professional care.</div>
-<footer>Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service. If you are in crisis, call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741.<br><br>&copy; 2026 Bubu Technologies LLC · <a href="mailto:info@muridoapp.com">info@muridoapp.com</a></footer>
+
 </div>
 <script>
 (function () {
@@ -62,7 +62,7 @@
     if (!navigator.clipboard) return;
     navigator.clipboard.writeText(code).then(function () {
       var c = document.getElementById('copied');
-      c.textContent = 'Copied — it will fill in automatically';
+      c.textContent = 'Copied. It will fill in automatically';
       setTimeout(function () { c.innerHTML = '&nbsp;'; }, 2500);
     }).catch(function () {});
   }
@@ -76,4 +76,7 @@
              + encodeURIComponent(code.toLowerCase()) + '&mt=8';
 })();
 </script>
-</body></html>
+</div></main><footer class="site-footer"><div class="container"><div class="cols"><div><a class="brand" href="index.html">murido</a><p>A gentle companion for grief and memory. Keep loving them after loss.</p><a class="btn btn-dark" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a></div>
+<div><h4>Murido</h4><ul><li><a href="about.html">About</a></li><li><a href="approach.html">Our Approach</a></li><li><a href="companions.html">Companions</a></li><li><a href="get.html">Get the app</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="blog/">Blog</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="mailto:info@muridoapp.com">info@muridoapp.com</a></li></ul></div></div>
+<p class="crisis" role="note"><strong>If you are in crisis, please reach out now.</strong> Call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741. If you are in immediate danger, call 911. Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service.</p><p class="copy">&copy; 2026 Bubu Technologies LLC</p></div></footer><script src="site.js" defer></script></body></html>
