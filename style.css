@@ -316,9 +316,10 @@ blockquote.pull p{margin:0}
 .ink-art img{display:block;width:100%;height:auto}
 .hero-art{max-width:520px;margin:36px auto 0}
 .wide-art{max-width:760px;margin:32px auto 0}
-.step-art{max-width:150px;margin:0 0 14px}
+.step-art{margin:-28px -28px 18px;border-radius:20px 20px 0 0;overflow:hidden;background:#fff}
 .byline img.byline-mark{border-radius:50%;background:#fff;object-fit:contain;padding:2px;mix-blend-mode:multiply}
 [data-theme=dark] .post-card .thumb,[data-theme=dark] .hero-img,[data-theme=dark] .ink-art{background:#F3ECE2}
 [data-theme=dark] .post-card .thumb img,[data-theme=dark] .hero-img img,[data-theme=dark] .ink-art img,[data-theme=dark] .byline img.byline-mark{mix-blend-mode:multiply}
 [data-theme=dark] .ink-art{border-radius:20px;padding:12px}
+[data-theme=dark] .step-art{background:#F3ECE2;padding:0;border-radius:20px 20px 0 0}
 [data-theme=dark] .byline img.byline-mark{background:#F3ECE2}
