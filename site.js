@@ -23,3 +23,4 @@
     if(!reduce){var k=0;timer=setInterval(function(){k=(k+1)%tabs.length;sel(tabs[k]);},6000);tl.addEventListener('mouseenter',function(){clearInterval(timer);});}
   });
 })();
+(function(){var b=document.querySelectorAll('.theme-toggle');b.forEach(function(x){x.addEventListener('click',function(){var r=document.documentElement,t=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}});});})();
