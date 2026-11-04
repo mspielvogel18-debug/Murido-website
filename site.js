@@ -20,7 +20,19 @@
       t.addEventListener('click',function(){clearInterval(timer);sel(t);});
       t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowDown'||e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(n){e.preventDefault();clearInterval(timer);sel(n,true);}});
     });
-    if(!reduce){var k=0;timer=setInterval(function(){k=(k+1)%tabs.length;sel(tabs[k]);},6000);tl.addEventListener('mouseenter',function(){clearInterval(timer);});}
+    if(!reduce){var k=0;timer=setInterval(function(){k=(k+1)%tabs.length;sel(tabs[k]);},11000);tl.addEventListener('mouseenter',function(){clearInterval(timer);});}
   });
 })();
 (function(){var b=document.querySelectorAll('.theme-toggle');b.forEach(function(x){x.addEventListener('click',function(){var r=document.documentElement,t=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}});});})();
+// theme-color sync for iOS Safari top bar
+(function(){function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';document.querySelectorAll('meta[name=theme-color]').forEach(function(m){m.setAttribute('content',d?'#121A2B':'#F2EAE0');});}sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});})();
+// phone chat mockups
+(function(){var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function run(ph){if(ph._t)ph._t.forEach(clearTimeout);ph._t=[];var steps=[].slice.call(ph.querySelectorAll('.step'));
+ steps.forEach(function(s){s.classList.remove('show','gone');if(s.dataset.type!==undefined){s.textContent=reduce?s.dataset.type:'';}});
+ if(reduce){steps.forEach(function(s){s.classList.add('show');});return;}
+ var t=500;function at(ms,f){ph._t.push(setTimeout(f,ms));}
+ steps.forEach(function(s){if(s.dataset.type!==undefined){var txt=s.dataset.type;at(t,function(){s.classList.add('show');});for(var i=1;i<=txt.length;i++){(function(i){at(t+i*38,function(){s.textContent=txt.slice(0,i);});})(i);}t+=txt.length*38+500;}
+ else if(s.classList.contains('dots')){at(t,function(){s.classList.add('show');});t+=1400;at(t,function(){s.classList.add('gone');});}
+ else{at(t,function(){s.classList.add('show');});t+=600;}});}
+document.querySelectorAll('.panel').forEach(function(p){var ph=p.querySelector('.phone');if(!ph)return;if(p.classList.contains('active'))run(ph);new MutationObserver(function(){if(p.classList.contains('active'))run(ph);}).observe(p,{attributes:true,attributeFilter:['class']});});})();
