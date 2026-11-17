@@ -1,0 +1,43 @@
+# Marketing site is static HTML at the repo root. There is no build command
+# on purpose. package.json exists only so Netlify can install firebase-admin
+# for the functions. Do not add a "build" script.
+# firebase-admin is external: esbuild cannot bundle it reliably.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["firebase-admin"]
+
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+
+# These rewrites match _redirects. Keep both in sync.
+# /api/* and /join/* must stay ahead of any future catch-all.
+
+[[redirects]]
+  from = "/api/preview-invite"
+  to = "/.netlify/functions/previewPublicInvite"
+  status = 200
+
+[[redirects]]
+  from = "/api/record-invite"
+  to = "/.netlify/functions/recordInviteFingerprint"
+  status = 200
+
+[[redirects]]
+  from = "/api/match-invite"
+  to = "/.netlify/functions/matchInviteFingerprint"
+  status = 200
+
+[[redirects]]
+  from = "/join/*"
+  to = "/join.html"
+  status = 200

@@ -1,0 +1,8 @@
+{
+  "name": "murido-website",
+  "private": true,
+  "description": "Static marketing site. firebase-admin is only for the Netlify invite functions.",
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}

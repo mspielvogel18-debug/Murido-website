@@ -1,0 +1,4 @@
+# Root install for Netlify functions. The committed app bundle is elsewhere.
+/node_modules/
+/.netlify/
+deno.lock
