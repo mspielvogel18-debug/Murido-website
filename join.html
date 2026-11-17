@@ -1,41 +1,61 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);window.__tc=t;}catch(e){}})();</script><meta name="color-scheme" content="light dark"><script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script><meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="icon" href="assets/icon.png">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F2EAE0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A2B" media="(prefers-color-scheme: dark)">
 <title>You've been invited | Murido</title>
 <meta name="description" content="Someone has invited you to help write a memory book in Murido.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 <style>
-  .code{font-family:Lora,Georgia,serif;font-size:2.4rem;letter-spacing:.32em;text-align:center;
-        background:var(--panel,#F2EAE0);border:1px solid #E4DAD0;border-radius:14px;
-        padding:1.1rem .6rem 1.1rem 1rem;margin:.4rem 0 .6rem}
-  .btn{display:block;text-align:center;text-decoration:none;font-weight:700;
-       border-radius:12px;padding:.95rem 1rem;margin:.5rem 0}
-  .btn-dark{background:#1F2B3A;color:#FBF8F4}
-  .btn-quiet{background:transparent;color:#1F2B3A;border:1px solid #E4DAD0}
-  .steps{counter-reset:s;list-style:none;padding:0;margin:1.2rem 0 0}
-  .steps li{counter-increment:s;position:relative;padding-left:2.1rem;margin:.65rem 0;color:#6B6259}
-  .steps li::before{content:counter(s);position:absolute;left:0;top:-.1rem;width:1.5rem;height:1.5rem;
-    border-radius:50%;background:#E4DAD0;color:#1F2B3A;font-size:.85rem;font-weight:700;
-    display:flex;align-items:center;justify-content:center}
-  .copied{text-align:center;color:#8A9A85;font-size:.9rem;min-height:1.2rem;margin:0}
+  .invite-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:1px solid var(--border);background:var(--bg)}
+  .invite-photo[hidden]{display:none}
+  .invite-label{margin:0 0 .2rem;color:var(--muted)}
+  .code{font-family:Lora,Georgia,serif;font-size:2.4rem;letter-spacing:.32em;text-align:center;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:1.1rem .6rem 1.1rem 1rem;margin:.4rem 0 .6rem;width:100%;cursor:pointer}
+  button.code{display:block;font-weight:400}
+  .invite-actions{display:grid;gap:10px;margin-top:.2rem}
+  .invite-actions .btn{width:100%;margin:0}
+  .invite-actions button.btn{font-family:inherit;font-size:.98rem;cursor:pointer}
+  .invite-actions button.btn-dark{border:0}
+  .copied{text-align:center;min-height:1.2rem;margin:0 0 .2rem}
 </style>
-</head><body>
-<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="inner"><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="30" height="30">murido</a><button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main"><a href="index.html">Home</a><a href="about.html">About</a><a href="approach.html">Our Approach</a><a href="companions.html">Companions</a><a href="blog/">Blog</a><button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><div class="header-ctas"><a class="btn" href="/app/">Use Murido on desktop</a><a class="btn btn-quiet" href="https://apps.apple.com/app/id6798652505">Download on iPhone</a></div></nav></div></header><main id="main" class="page"><div class="wrap">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="inner"><a class="brand" href="/index.html"><img src="/assets/icon.png" alt="" width="30" height="30">murido</a><button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main"><a href="/index.html">Home</a><a href="/about.html">About</a><a href="/approach.html">Our Approach</a><a href="/companions.html">Companions</a><a href="/blog/">Blog</a><button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><div class="header-ctas"><a class="btn" href="/app/">Use Murido on desktop</a><a class="btn btn-quiet" href="https://apps.apple.com/app/id6798652505">Download on iPhone</a></div></nav></div></header>
+<main id="main" class="page"><div class="wrap">
 
-<h1>You’ve been invited.</h1>
-<p class="lede">Someone wants your help remembering a person they loved: the stories only you have, the ordinary days nobody else saw. You write your part, they write theirs, and it becomes one book.</p>
+<img id="photo" class="invite-photo" alt="" hidden>
+<h1 id="title">You've been invited.</h1>
+<p class="lede" id="blurb">Someone wants your help remembering a person they loved: the stories only you have, the ordinary days nobody else saw. You write your part, they write theirs, and it becomes one book.</p>
 
 <div class="card">
-  <p style="margin:0 0 .2rem;color:var(--muted)">Your invite code</p>
-  <div class="code" id="code">······</div>
-  <p class="copied" id="copied">&nbsp;</p>
-  <a class="btn btn-dark" id="open" href="#">Open in Murido</a>
-  <a class="btn btn-quiet" id="store" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a>
+  <p class="invite-label">Your invite code</p>
+  <button class="code" id="code" type="button">······</button>
+  <p class="copied" id="copied" role="status" aria-live="polite">&nbsp;</p>
+  <div class="invite-actions">
+    <button class="btn btn-dark" id="store" type="button">Download for iPhone</button>
+    <a class="btn btn-quiet" id="open" href="murido://join/">Open in Murido</a>
+    <button class="btn btn-quiet" id="copy" type="button">Copy invite</button>
+  </div>
 </div>
 
-<div class="card">
-  <h3>If you don’t have the app yet</h3>
+<div class="card" id="steps-card">
+  <h3>If you don't have the app yet</h3>
   <ol class="steps">
-    <li>Tap <strong>Download for iPhone</strong> and install Murido.</li>
-    <li>Open it and choose <strong>“I was invited to someone’s book.”</strong></li>
-    <li>Enter the code above. You’ll be added to their book.</li>
+    <li>Tap <strong>Download for iPhone</strong>. This copies your invite.</li>
+    <li>Install Murido and open it.</li>
+    <li>Choose <strong>"I was invited to someone's book."</strong> The code fills in. If it does not, enter the code above.</li>
   </ol>
 </div>
 
@@ -44,59 +64,147 @@
 </div>
 <script>
 (function () {
-  // Accept ?c=CODE, and also tolerate /join.html?CODE and a #CODE fragment,
-  // because invite links get retyped and forwarded by hand.
-  var q = new URLSearchParams(location.search);
-  var raw = q.get('c') || q.get('code') || location.hash.replace('#', '') ||
-            (location.search.startsWith('?') && !location.search.includes('=')
-              ? location.search.slice(1) : '');
-  var code = (raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  var ENDPOINT = '/api';
+  var STORE = 'https://apps.apple.com/app/id6798652505';
 
-  var el = document.getElementById('code');
+  // /join/CODE is the shared link. Older links use /join.html?c=CODE.
+  var parts = location.pathname.split('/').filter(Boolean);
+  var fromPath = (parts[0] === 'join' && parts[1]) ? parts[1] : '';
+  var q = new URLSearchParams(location.search);
+  var bare = (location.search.charAt(0) === '?' && location.search.indexOf('=') === -1)
+    ? location.search.slice(1) : '';
+  var raw = fromPath || q.get('c') || q.get('code') || location.hash.replace(/^#/, '') || bare || '';
+  var code = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, '');
+  var url = 'https://muridoapp.com/join/' + code;
+  var token = 'murido-invite:' + code;
+
+  var codeEl = document.getElementById('code');
   var open = document.getElementById('open');
+  var store = document.getElementById('store');
+  var copyBtn = document.getElementById('copy');
+  var copied = document.getElementById('copied');
+
+  function signals() {
+    var ua = navigator.userAgent || '';
+    var ios = (ua.match(/OS (\d+)[_\.](\d+)/) || [])[0] || '';
+    var model = /iPad/.test(ua) ? 'iPad' : (/iPhone/.test(ua) ? 'iPhone' : 'other');
+    var lang = (navigator.language || '').split('-')[0];
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    return { code: code, ios: ios, model: model, screenW: screen.width, screenH: screen.height, tz: tz, lang: lang };
+  }
+
+  function show(preview) {
+    if (!preview) return;
+    var inviter = preview.inviterName || 'Someone';
+    var person = preview.personName || 'them';
+    document.getElementById('title').textContent = inviter + ' invited you.';
+    document.getElementById('blurb').textContent = 'Join the book for ' + person + '. You write your part, they write theirs, and it becomes one book.';
+    if (preview.photoUrl) {
+      var img = document.getElementById('photo');
+      img.src = preview.photoUrl;
+      img.alt = person;
+      img.hidden = false;
+    }
+  }
+
+  // Plain text is murido-invite:CODE plus the https URL. The URL type is what
+  // lets the iOS app notice a link without reading an unrelated clipboard.
+  // Safari wants those blobs inside promises. Other browsers take the blobs.
+  function writeToken() {
+    var text = token + '\n' + url;
+    function plain() {
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+      return Promise.resolve();
+    }
+    if (!(navigator.clipboard && navigator.clipboard.write && window.ClipboardItem)) return plain();
+    function item(usePromise) {
+      var plainBlob = new Blob([text], { type: 'text/plain' });
+      var uriBlob = new Blob([url], { type: 'text/uri-list' });
+      var entry = {};
+      entry['text/plain'] = usePromise ? Promise.resolve(plainBlob) : plainBlob;
+      entry['text/uri-list'] = usePromise ? Promise.resolve(uriBlob) : uriBlob;
+      return new ClipboardItem(entry);
+    }
+    try {
+      return navigator.clipboard.write([item(true)]).catch(function () {
+        try { return navigator.clipboard.write([item(false)]).catch(plain); }
+        catch (e) { return plain(); }
+      });
+    } catch (e) {
+      try { return navigator.clipboard.write([item(false)]).catch(plain); }
+      catch (e2) { return plain(); }
+    }
+  }
+
+  function markCopied() {
+    copied.textContent = 'Invite copied';
+  }
+  function markFailed() {
+    copied.textContent = 'Copy did not work. Enter the code in the app.';
+  }
+
+  if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    store.textContent = 'Murido is on iPhone. Open this link there';
+  }
 
   if (!code) {
-    el.textContent = '...';
-    el.style.letterSpacing = '0';
-    el.style.fontSize = '1.2rem';
-    document.getElementById('copied').textContent =
-      'This link is missing its code. Ask for the link again.';
-    open.style.display = 'none';
+    codeEl.textContent = 'This link is missing its code. Ask for the link again.';
+    codeEl.style.letterSpacing = '0';
+    codeEl.style.fontSize = '1.05rem';
+    codeEl.disabled = true;
+    open.hidden = true;
+    copyBtn.hidden = true;
+    store.addEventListener('click', function () { location.href = STORE; });
     return;
   }
 
-  el.textContent = code;
+  codeEl.textContent = code;
   open.href = 'murido://join/' + code;
 
-  // Copying is the whole point of this page for anyone installing the app:
-  // they have to carry the code across the App Store by hand.
-  el.style.cursor = 'pointer';
-  el.title = 'Tap to copy';
-  function copy() {
-    if (!navigator.clipboard) return;
-    navigator.clipboard.writeText(code).then(function () {
-      var c = document.getElementById('copied');
-      c.textContent = 'Code copied';
-      setTimeout(function () { c.innerHTML = '&nbsp;'; }, 2000);
-    }).catch(function () {});
+  if (code) {
+    fetch(ENDPOINT + '/preview-invite', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: code }),
+    }).then(function (r) { return r.ok ? r.json() : null; }).then(show).catch(function () {});
   }
-  el.addEventListener('click', copy);
 
-  // If Murido is already installed the scheme opens it. If it is not, iOS does
-  // nothing at all -- no error, no navigation -- so this is only ever wired to
-  // a button the user chooses to press, never fired on load.
+  function copyInvite() {
+    return writeToken().then(markCopied, markFailed);
+  }
+
+  codeEl.addEventListener('click', function () { copyInvite(); });
+  copyBtn.addEventListener('click', function () { copyInvite(); });
+
+  // The custom scheme only runs when someone taps. If Murido is not installed,
+  // iOS does nothing with it, so it is never fired on load.
   open.addEventListener('click', function (e) {
     e.preventDefault();
-    copy();
-    window.location.href = 'murido://join/' + code;
+    writeToken().finally(function () {
+      location.href = 'murido://join/' + code;
+    });
   });
 
-  if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    document.getElementById('store').textContent = 'Murido is on iPhone. Open this link there';
-  }
+  store.addEventListener('click', function () {
+    writeToken().finally(function () {
+      fetch(ENDPOINT + '/record-invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(signals()),
+      }).finally(function () {
+        location.href = STORE;
+      });
+    });
+  });
+
 })();
 </script>
-</div></main><footer class="site-footer"><div class="container"><div class="cols"><div><a class="brand" href="index.html">murido</a><p>A gentle companion for grief and memory. Keep loving them after loss.</p><a class="btn btn-dark" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a></div>
-<div><h4>Murido</h4><ul><li><a href="about.html">About</a></li><li><a href="approach.html">Our Approach</a></li><li><a href="companions.html">Companions</a></li><li><a href="get.html">Get the app</a></li></ul></div>
-<div><h4>Resources</h4><ul><li><a href="blog/">Blog</a></li><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="mailto:info@muridoapp.com">info@muridoapp.com</a></li></ul></div></div>
-<p class="crisis" role="note"><strong>If you are in crisis, please reach out now.</strong> Call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741. If you are in immediate danger, call 911. Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service.</p><p class="copy">&copy; 2026 Bubu Technologies LLC</p></div></footer><script src="site.js" defer></script></body></html>
+</main>
+<footer class="site-footer"><div class="container"><div class="cols"><div><a class="brand" href="/index.html">murido</a><p>A gentle companion for grief and memory. Keep loving them after loss.</p><a class="btn btn-dark" href="https://apps.apple.com/app/id6798652505">Download for iPhone</a></div>
+<div><h4>Murido</h4><ul><li><a href="/about.html">About</a></li><li><a href="/approach.html">Our Approach</a></li><li><a href="/companions.html">Companions</a></li><li><a href="/get.html">Get the app</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/support.html">Support</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/terms.html">Terms of Use</a></li><li><a href="mailto:info@muridoapp.com">info@muridoapp.com</a></li></ul></div></div>
+<p class="crisis" role="note"><strong>If you are in crisis, please reach out now.</strong> Call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline) or text HOME to 741741. If you are in immediate danger, call 911. Murido is peer-style emotional support for grief. It is not therapy, medical care, or a crisis service.</p><p class="copy">&copy; 2026 Bubu Technologies LLC</p></div></footer>
+<script src="/site.js" defer></script>
+</body>
+</html>

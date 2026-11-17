@@ -1,3 +1,10 @@
+# Invite API and shared join links. Keep these above any catch-all.
+/api/preview-invite    /.netlify/functions/previewPublicInvite    200
+/api/record-invite     /.netlify/functions/recordInviteFingerprint    200
+/api/match-invite      /.netlify/functions/matchInviteFingerprint    200
+/join/*                /join.html    200
+
+# Existing desktop app shell.
 /app     /app/index.html  200
 /app/    /app/index.html  200
 /app/*   /app/index.html  200

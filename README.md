@@ -6,7 +6,7 @@ Static HTML/CSS/JS for muridoapp.com. No build step; Netlify deploys on push to 
 - `about.html`, `approach.html`, `companions.html`, `get.html`: main pages
 - `blog/`: blog index, `blog/category/*.html` category pages, one HTML file per post
 - `privacy.html`, `terms.html`, `support.html`: legal and support (App Store links here)
-- `join.html`, `r.html`: invite and referral landing pages
+- `join.html`, `r.html`: invite and referral landing pages. Shared invites are `https://muridoapp.com/join/<code>` (`/join/*` rewrites to `join.html`). See `netlify/README.md` for `FIREBASE_SERVICE_ACCOUNT`.
 - `style.css`: brand tokens and all styles; `site.js`: scroll reveal, sticky header, mobile menu, tabs
 - `assets/`: app icon and App Store screenshots
 
