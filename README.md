@@ -12,3 +12,5 @@ Static HTML/CSS/JS for muridoapp.com. No build step; Netlify deploys on push to 
 
 Every page must keep the shared header, the footer, and the 988 crisis note. Search for `[PLACEHOLDER` to find content still to fill in.
 Copy rule: no em or en dashes.
+
+`/app` (the Expo Web build of the app) is private as of Nov 20, 2026: `_redirects` sends `/app` and `/app/*` to `/` with a 301, and there is no link to it anywhere. The last live build and the restore steps are on branch `archive/web-app-2026-11-20` (see `ARCHIVE_RESTORE.md` there).
