@@ -1,3 +1,4 @@
-/app     /app/index.html  200
-/app/    /app/index.html  200
-/app/*   /app/index.html  200
+# The web app is private for now (Nov 20, 2026). Archived on branch archive/web-app-2026-11-20.
+/app     /  301!
+/app/    /  301!
+/app/*   /  301!
